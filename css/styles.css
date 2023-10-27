@@ -62,4 +62,10 @@ body {
     height: 150px;
     background-color: var(--dark-grey);
     border-bottom: 15px solid var(--dark-purple);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.display .operand-1 {
+
 }
