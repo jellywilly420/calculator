@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 :root {
     --dark-purple: #363062;
     --light-purple: #4D4C7D;
     --orange: #EA906C;
-    --light-grey: #F5F5F5;
+    --light-grey: #F1EFEF;
     --dark-grey: #B9B4C7;
     --red: #C70039;
+    --black: #0F0F0F;
 }
 * {
     padding: 0;
@@ -13,22 +15,22 @@
 body {
     display: flex;
     justify-content: center;
+    background-color: var(--light-grey);
+    font-family: 'Inter', sans-serif;
 }
 .buttons {
-    width: 350px;
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--dark-purple);
-    /* gap: 2px; */
 }
 .buttons button {
+    padding: 20px;
     width: 25%;
-    height: 70px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    font-weight: 500;
     border-radius: 10px;
     background: var(--light-purple);
     color: var(--light-grey);
-    border: 2px solid var(--dark-grey);
+    border: 2px solid var(--black);
 }
 .buttons .operator {
     background: var(--orange);
@@ -41,9 +43,6 @@ body {
 .buttons .clr {
     background: var(--red);
 }
-.buttons .operator, .buttons .del, .buttons .clr {
-    border: 2px solid var(--light-grey);
-}
 .buttons button:hover {
     filter: brightness(90%);
 }
@@ -53,19 +52,43 @@ body {
 .buttons button.btn-0 {
     width: 50%;
 }
+.buttons button.btn-eq {
+    background: var(--light-grey);
+    color: var(--dark-purple);
+}
 .calculator {
-    border: 15px solid var(--dark-purple);
+    width: 400px;
+    padding: 15px;
+    border: 5px solid var(--black);
+    background-color: var(--dark-purple);
     border-radius: 10px;
-    margin: 3rem 0 0;
+    margin: 5rem 0 0;
+    box-shadow: 5px 5px 15px var(--black);
 }
 .display {
     height: 150px;
     background-color: var(--dark-grey);
-    border-bottom: 15px solid var(--dark-purple);
+    margin-bottom: 15px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    overflow-x: scroll;
 }
-.display .operand-1 {
-
+.display > * {
+    text-indent: 20px;
+    color: var(--dark-purple);
+    text-shadow: 0 2px 2px var(--light-grey);
+}
+.display .main-display {
+    height: 45%;
+    font-size: 3rem;
+}
+.display .secondary-display {
+    height: 35%;
+    font-size: 2rem;
+}
+.display .operator-display {
+    height: 20%;
+    font-size: 1.5rem;
 }

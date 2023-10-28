@@ -36,10 +36,10 @@ function solveProblem() {
     else if (operator === '-') {
         return substract(oldOperand, newOperand)
     }
-    else if (operator === '*') {
+    else if (operator === 'x') {
         return multiply(oldOperand, newOperand)
     }
-    else if (operator === '/') {
+    else if (operator === '÷') {
         if (newOperand === 0) {
             clearDisplay();
             alert(`The answer is exactly how much you're loved♥`);
@@ -123,9 +123,9 @@ operatorButtons.forEach((button)=>{
                 clearDisplay();
             }
             else {
-                displayOnMain(solveProblem());
-                clearSecondaryDisplay();
-                clearOperatorDisplay();
+                displayOnSecondary(solveProblem());
+                displayOnOperator(event.target.innerText)
+                clearMainDisplay();
             }
         }
     })
