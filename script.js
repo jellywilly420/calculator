@@ -25,31 +25,49 @@ function divide(operand1, operand2){
 function power(operand, power){
     return (operand**power)
 }
+function getDecimals(number){
+    let string = number.toString();
+    if (!'.' in [...string]) {
+        return 0
+    }
+    else {
+        let floats = string.split('.');
+        return floats[1].length;
+    }
+}
 function solveProblem() {
     let newOperand = Number(mainDisplay.innerText);
     let oldOperand = Number(secondaryDisplay.innerText);
     let operator = operatorDisplay.innerText;
+    let result;
 
     if (operator === '+') {
-        return add(oldOperand, newOperand)
+        result = add(oldOperand, newOperand);
     }
     else if (operator === '-') {
-        return substract(oldOperand, newOperand)
+        result = substract(oldOperand, newOperand);
     }
     else if (operator === 'x') {
-        return multiply(oldOperand, newOperand)
+        result = multiply(oldOperand, newOperand);
     }
     else if (operator === '÷') {
         if (newOperand === 0) {
             clearDisplay();
             alert(`The answer is exactly how much you're loved♥`);
+            return;
         }
         else {
-            return divide(oldOperand, newOperand)
+            result = divide(oldOperand, newOperand);
         }
     }
     else if (operator === '^') {
-        return power(oldOperand, newOperand)
+        result = power(oldOperand, newOperand);
+    }
+    if (getDecimals(result)>5) {
+        return Number(result.toFixed(5));
+    }
+    else {
+        return result;
     }
 }
 function clearMainDisplay() {
@@ -160,4 +178,3 @@ deleteButton.addEventListener('click', ()=>{
 clearButton.addEventListener('click', ()=>{
     clearDisplay();
 })
-// console.log(numberButtons)
