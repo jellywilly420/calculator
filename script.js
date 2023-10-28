@@ -27,12 +27,12 @@ function power(operand, power){
 }
 function getDecimals(number){
     let string = number.toString();
-    if (!'.' in [...string]) {
+    if (!([...string].includes('.'))) {
         return 0
     }
     else {
         let floats = string.split('.');
-        return floats[1].length;
+        return [...floats[1]].length;
     }
 }
 function solveProblem() {

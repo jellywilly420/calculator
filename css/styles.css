@@ -69,16 +69,20 @@ body {
     height: 150px;
     background-color: var(--dark-grey);
     margin-bottom: 15px;
+    border: 2px solid var(--black);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 .display > * {
     text-indent: 20px;
     color: var(--dark-purple);
     text-shadow: 0 2px 2px var(--light-grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .display .main-display {
     height: 45%;
